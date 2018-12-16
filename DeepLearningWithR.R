@@ -37,6 +37,8 @@ network %>% predict_classes(test_images[1:10,])
 ######################################################################
 # Chapter 3
 
+# IMDB sentiment analysis example
+
 library(keras)
 
 imdb <- dataset_imdb(num_words = 10000) #ibdb is a list of 2 lists (each of length 2)
