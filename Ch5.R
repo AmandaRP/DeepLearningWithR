@@ -176,7 +176,7 @@ datgen <- image_data_generator(
   fill_mode = "nearest"
 )
 
-#See listing 5.12 for viewing randonly augmented images.
+#See listing 5.12 for viewing randomly augmented images.
 
 model <- keras_model_sequential() %>%
   layer_conv_2d(filters = 32, kernel_size = c(3,3), activation = "relu",
@@ -402,3 +402,16 @@ test_generator <- flow_images_from_directory(
 )
 
 model %>% evaluate_generator(test_generator, steps = 50)
+
+#model from section 5.2:
+library(keras)
+model <- load_model_weights_hdf5(model,"/home/rstudio-user/cats_and_dogs_small_2.h5") 
+model
+#Note: load command above slightly different than book. Need to specify object (model) to load.
+
+
+#Listing 5.24
+img_path <- "~/DeepLearningWithR/data/cats_and_dogs_small/test/cats/cat.1700.jpg"
+
+
+
